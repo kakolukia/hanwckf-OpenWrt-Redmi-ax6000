@@ -1,4 +1,4 @@
-name: delete-older-releases1
+name: delete-older-releases
 on:
   workflow_dispatch:
   schedule:
