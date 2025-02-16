@@ -23,4 +23,5 @@ echo 'src-git ddns-go https://github.com/sirpdboy/luci-app-ddns-go.git;main' >>f
 # echo 'src-git mosdns https://github.com/sbwml/luci-app-mosdns;v5' >>feeds.conf.default
 # echo 'src-git v2ray-geodata https://github.com/sbwml/v2ray-geodata' >>feeds.conf.default
 echo 'src-git istore https://github.com/linkease/istore;main' >> feeds.conf.default
+# echo 'src-git alist https://github.com/sbwml/luci-app-alist' >> feeds.conf.default
 # echo 'src-git messense https://github.com/messense/aliyundrive-webdav' >>feeds.conf.default
