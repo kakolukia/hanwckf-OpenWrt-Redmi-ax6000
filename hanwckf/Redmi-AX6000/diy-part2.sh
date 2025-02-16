@@ -6,6 +6,10 @@
 # See /LICENSE for more information.
 #
 # Custom for REDMI AX6000
+
+find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
+find ./ | grep Makefile | grep mosdns | xargs rm -f
+
 sed -i 's/192.168.1.1/192.168.6.1/g' package/base-files/files/bin/config_generate
 # sed -i 's/ImmortalWrt/OpenWrt/g' package/base-files/files/bin/config_generate
 # sed -i 's/pool.ntp.org/3.openwrt.pool.ntp.org/g' package/base-files/files/bin/config_generate
