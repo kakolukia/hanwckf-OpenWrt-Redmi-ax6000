@@ -55,20 +55,21 @@
 #     fi
 # done
 
+rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
+rm -rf feeds/packages/lang/golang
+
 # drop mosdns and v2ray-geodata packages that come with the source
+rm -rf feeds/packages/net/v2ray-geodata
 find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 find ./ | grep Makefile | grep mosdns | xargs rm -f
-
-# rm -rf feeds/packages/lang/golang
-rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
 
 # golang
 git clone --depth 1 --single-branch https://github.com/kenzok8/golang -b main feeds/packages/lang/golang
 # git clone --depth 1 --single-branch https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
 
 # mosdns
-git clone --depth 1 --single-branch https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
-git clone --depth 1 --single-branch https://github.com/sbwml/v2ray-geodata -b master package/v2ray-geodata
+git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
+git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 
 # v2ray-geodata
 # GEOIP_VER=$(echo -n `curl -sL https://api.github.com/repos/Loyalsoldier/v2ray-rules-dat/releases/latest | jq -r .tag_name`)
