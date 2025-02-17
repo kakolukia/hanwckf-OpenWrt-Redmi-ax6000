@@ -17,7 +17,7 @@ on:
 #    - cron: 0 16 * * *
 
 env:
-  REPO_URL: https://github.com/hanwckf/immortalwrt-mt798x
+  REPO_URL: https://github.com/padavanonly/immortalwrt-mt798x
   REPO_BRANCH: openwrt-21.02
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: hanwckf/Redmi-AX6000/padavanonly-immortalwrt-m798x.config
@@ -67,6 +67,7 @@ jobs:
       run: |
         cd openwrt
         ./scripts/feeds update -a
+#        wget https://github.com/QiuSimons/openwrt-mos/raw/master/mosdns/Makefile -O ./feeds/packages/net/mosdns/Makefile
         ./scripts/feeds install -a
       
     - name: Load-config & DIY_P2_SH
