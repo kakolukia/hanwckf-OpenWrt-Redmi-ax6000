@@ -12,6 +12,7 @@ feeds/luci/applications/luci-app-passwall
 feeds/luci/applications/luci-app-wechatpush
 feeds/luci/applications/luci-app-smartdns
 feeds/luci/applications/luci-app-serverchan
+feeds/luci/applications/luci-app-mosdns
 feeds/packages/net/brook
 feeds/packages/net/dns2socks
 feeds/packages/net/microsocks
@@ -64,6 +65,9 @@ find ./ | grep Makefile | grep mosdns | xargs rm -f
 
 # golang
 git clone --depth 1 --single-branch https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
+
+git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
+git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 
 # v2ray-geodata
 GEOIP_VER=$(echo -n `curl -sL https://api.github.com/repos/Loyalsoldier/v2ray-rules-dat/releases/latest | jq -r .tag_name`)
