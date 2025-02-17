@@ -69,6 +69,7 @@ git clone --depth 1 --single-branch https://github.com/kenzok8/golang -b main fe
 # git clone --depth 1 --single-branch https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
 
 # mosdns
+# cp -r -f ./feeds/smpackage/mosdns ./feeds/packages/net/mosdns
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 
