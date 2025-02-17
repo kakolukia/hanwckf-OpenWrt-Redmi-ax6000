@@ -7,54 +7,54 @@
 #
 # Custom for REDMI AX6000
 
-del_data="
-feeds/luci/applications/luci-app-passwall
-feeds/luci/applications/luci-app-wechatpush
-feeds/luci/applications/luci-app-smartdns
-feeds/luci/applications/luci-app-serverchan
-feeds/luci/applications/luci-app-mosdns
-feeds/packages/net/brook
-feeds/packages/net/dns2socks
-feeds/packages/net/microsocks
-feeds/packages/net/pdnsd-alt
-feeds/packages/net/v2ray-geodata
-feeds/packages/net/naiveproxy
-feeds/packages/net/shadowsocks-rust
-feeds/packages/net/shadowsocksr-libev
-feeds/packages/net/simple-obfs
-feeds/packages/net/sing-box
-feeds/packages/net/tcping
-feeds/packages/net/trojan
-feeds/packages/net/trojan-go
-feeds/packages/net/trojan-plus
-feeds/packages/net/v2ray-core
-feeds/packages/net/v2ray-plugin
-feeds/packages/net/xray-plugin
-feeds/packages/net/chinadns-ng
-feeds/packages/net/dns2tcp
-feeds/packages/net/tcping
-feeds/packages/net/hysteria
-feeds/packages/net/tuic-client
-feeds/packages/net/smartdns
-feeds/packages/net/ipt2socks
-feeds/packages/net/xray-core
-feeds/packages/net/cdnspeedtest
-feeds/packages/lang/golang
-feeds/packages/lang/rust
-feeds/packages/devel/gn
-target/linux/mediatek/patches-5.4/0504-macsec-revert-async-support.patch
-target/linux/mediatek/patches-5.4/0005-dts-mt7622-add-gsw.patch
-target/linux/mediatek/patches-5.4/0993-arm64-dts-mediatek-Split-PCIe-node-for-MT2712-MT7622.patch
-target/linux/mediatek/patches-5.4/1024-pcie-add-multi-MSI-support.patch
-"
-
-for data in ${del_data};
-do
-    if [[ -d ${data} || -f ${data} ]];then
-        rm -rf ${data}
-        echo "Deleted ${data}"
-    fi
-done
+# del_data="
+# feeds/luci/applications/luci-app-passwall
+# feeds/luci/applications/luci-app-wechatpush
+# feeds/luci/applications/luci-app-smartdns
+# feeds/luci/applications/luci-app-serverchan
+# feeds/luci/applications/luci-app-mosdns
+# feeds/packages/net/brook
+# feeds/packages/net/dns2socks
+# feeds/packages/net/microsocks
+# feeds/packages/net/pdnsd-alt
+# feeds/packages/net/v2ray-geodata
+# feeds/packages/net/naiveproxy
+# feeds/packages/net/shadowsocks-rust
+# feeds/packages/net/shadowsocksr-libev
+# feeds/packages/net/simple-obfs
+# feeds/packages/net/sing-box
+# feeds/packages/net/tcping
+# feeds/packages/net/trojan
+# feeds/packages/net/trojan-go
+# feeds/packages/net/trojan-plus
+# feeds/packages/net/v2ray-core
+# feeds/packages/net/v2ray-plugin
+# feeds/packages/net/xray-plugin
+# feeds/packages/net/chinadns-ng
+# feeds/packages/net/dns2tcp
+# feeds/packages/net/tcping
+# feeds/packages/net/hysteria
+# feeds/packages/net/tuic-client
+# feeds/packages/net/smartdns
+# feeds/packages/net/ipt2socks
+# feeds/packages/net/xray-core
+# feeds/packages/net/cdnspeedtest
+# feeds/packages/lang/golang
+# feeds/packages/lang/rust
+# feeds/packages/devel/gn
+# target/linux/mediatek/patches-5.4/0504-macsec-revert-async-support.patch
+# target/linux/mediatek/patches-5.4/0005-dts-mt7622-add-gsw.patch
+# target/linux/mediatek/patches-5.4/0993-arm64-dts-mediatek-Split-PCIe-node-for-MT2712-MT7622.patch
+# target/linux/mediatek/patches-5.4/1024-pcie-add-multi-MSI-support.patch
+# "
+# 
+# for data in ${del_data};
+# do
+#     if [[ -d ${data} || -f ${data} ]];then
+#         rm -rf ${data}
+#         echo "Deleted ${data}"
+#     fi
+# done
 
 rm -rf feeds/packages/lang/golang
 rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
