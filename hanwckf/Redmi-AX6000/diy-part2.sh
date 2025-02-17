@@ -64,7 +64,7 @@ find ./ | grep Makefile | grep mosdns | xargs rm -f
 rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb,*passwall*,v2ray*}
 
 # golang
-git clone --depth 1 --single-branch https://github.com/kenzok8/golang feeds/packages/lang/golang -b main feeds/packages/lang/golang
+git clone --depth 1 --single-branch https://github.com/kenzok8/golang -b main feeds/packages/lang/golang
 # git clone --depth 1 --single-branch https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
 
 # mosdns
