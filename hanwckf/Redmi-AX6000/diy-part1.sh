@@ -19,7 +19,7 @@ echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;main' >
 echo 'src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main' >>feeds.conf.default
 # echo 'src-git openclash https://github.com/vernesong/OpenClash.git;master' >>feeds.conf.default
 # echo 'src-git ddns-go https://github.com/sirpdboy/luci-app-ddns-go.git;main' >>feeds.conf.default
-git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
+# git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 echo 'src-git lucky https://github.com/sirpdboy/luci-app-lucky.git;main' >>feeds.conf.default
 echo 'src-git mosdns https://github.com/sbwml/luci-app-mosdns.git;v5' >>feeds.conf.default
 echo 'src-git v2ray-geodata https://github.com/sbwml/v2ray-geodata' >>feeds.conf.default
