@@ -59,9 +59,10 @@ rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftabl
 rm -rf feeds/packages/lang/golang
 
 # drop mosdns and v2ray-geodata packages that come with the source
+rm -rf feeds/packages/net/mosdns
 rm -rf feeds/packages/net/v2ray-geodata
-find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
-find ./ | grep Makefile | grep mosdns | xargs rm -f
+# find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
+# find ./ | grep Makefile | grep mosdns | xargs rm -f
 
 # golang
 git clone --depth 1 --single-branch https://github.com/kenzok8/golang -b main feeds/packages/lang/golang
