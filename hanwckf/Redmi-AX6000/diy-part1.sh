@@ -16,8 +16,8 @@ sed -i '$a src-git smpackage https://github.com/kenzok8/small-package' feeds.con
 
 # Add a feed source
 # echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
-echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall;main' >>feeds.conf.default
-echo 'src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages;main' >>feeds.conf.default
+# echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall;main' >>feeds.conf.default
+# echo 'src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages;main' >>feeds.conf.default
 # echo 'src-git openclash https://github.com/vernesong/OpenClash.git;master' >>feeds.conf.default
 # echo 'src-git ddns-go https://github.com/sirpdboy/luci-app-ddns-go.git;main' >>feeds.conf.default
 # git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
@@ -28,5 +28,5 @@ echo 'src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-pa
 # echo 'src-git alist https://github.com/sbwml/luci-app-alist' >>feeds.conf.default
 # echo 'src-git messense https://github.com/messense/aliyundrive-webdav' >>feeds.conf.default
 
-git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
-git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
+# git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
+# git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
