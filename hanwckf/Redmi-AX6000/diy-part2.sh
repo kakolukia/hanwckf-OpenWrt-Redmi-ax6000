@@ -7,7 +7,7 @@
 #
 # Custom for REDMI AX6000
 
-# del_data="
+del_data="
 # feeds/luci/applications/luci-app-passwall
 # feeds/luci/applications/luci-app-wechatpush
 # feeds/luci/applications/luci-app-smartdns
@@ -39,32 +39,33 @@
 # feeds/packages/net/ipt2socks
 # feeds/packages/net/xray-core
 # feeds/packages/net/cdnspeedtest
-# feeds/packages/lang/golang
+feeds/packages/lang/golang
 # feeds/packages/lang/rust
 # feeds/packages/devel/gn
 # target/linux/mediatek/patches-5.4/0504-macsec-revert-async-support.patch
 # target/linux/mediatek/patches-5.4/0005-dts-mt7622-add-gsw.patch
 # target/linux/mediatek/patches-5.4/0993-arm64-dts-mediatek-Split-PCIe-node-for-MT2712-MT7622.patch
 # target/linux/mediatek/patches-5.4/1024-pcie-add-multi-MSI-support.patch
-# "
-# 
-# for data in ${del_data};
-# do
-#     if [[ -d ${data} || -f ${data} ]];then
-#         rm -rf ${data}
-#         echo "Deleted ${data}"
-#     fi
-# done
+"
+
+for data in ${del_data};
+do
+    if [[ -d ${data} || -f ${data} ]];then
+        rm -rf ${data}
+        echo "Deleted ${data}"
+    fi
+done
 
 # drop mosdns and v2ray-geodata packages that come with the source
 find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 find ./ | grep Makefile | grep mosdns | xargs rm -f
 
-rm -rf feeds/packages/lang/golang
+# rm -rf feeds/packages/lang/golang
 rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb,*passwall*,v2ray*}
 
 # golang
-git clone --depth 1 --single-branch https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
+git clone --depth 1 --single-branch https://github.com/kenzok8/golang feeds/packages/lang/golang -b main feeds/packages/lang/golang
+# git clone --depth 1 --single-branch https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
 
 # mosdns
 git clone --depth 1 --single-branch https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
