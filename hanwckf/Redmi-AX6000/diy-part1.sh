@@ -16,8 +16,8 @@ sed -i '$a src-git smpackage https://github.com/kenzok8/small-package' feeds.con
 
 # Add a feed source
 # echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
-echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall;main' >>feeds.conf.default
-echo 'src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages;main' >>feeds.conf.default
+# echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall;main' >>feeds.conf.default
+# echo 'src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages;main' >>feeds.conf.default
 # echo 'src-git openclash https://github.com/vernesong/OpenClash.git;master' >>feeds.conf.default
 # echo 'src-git ddns-go https://github.com/sirpdboy/luci-app-ddns-go.git;main' >>feeds.conf.default
 # git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
