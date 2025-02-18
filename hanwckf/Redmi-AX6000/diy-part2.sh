@@ -55,6 +55,8 @@
 #     fi
 # done
 
+./scripts/feeds update -a
+
 # clean dupe package makefile
 rm -rf feeds/luci/applications/luci-app-mosdns
 rm -rf feeds/packages/lang/golang
@@ -76,6 +78,8 @@ git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 # git clone https://github.com/gdy666/luci-app-lucky.git package/lucky
 # git clone https://github.com/sbwml/luci-app-alist package/alist
 # git clone https://github.com/vernesong/OpenClash.git package/luci-app-openclash
+
+./scripts/feeds install -a
 
 # v2ray-geodata
 # GEOIP_VER=$(echo -n `curl -sL https://api.github.com/repos/Loyalsoldier/v2ray-rules-dat/releases/latest | jq -r .tag_name`)
