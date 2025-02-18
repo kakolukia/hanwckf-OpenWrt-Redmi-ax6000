@@ -59,13 +59,13 @@
 
 # clean dupe package makefile
 rm -rf feeds/luci/applications/luci-app-mosdns
-rm -rf feeds/packages/lang/golang
+# rm -rf feeds/packages/lang/golang
 rm -rf feeds/packages/net/mosdns
-rm -rf feeds/packages/net/v2ray-core
-rm -rf feeds/packages/net/v2ray-plugin
+# rm -rf feeds/packages/net/v2ray-core
+# rm -rf feeds/packages/net/v2ray-plugin
 rm -rf feeds/packages/net/v2ray-geodata
-rm -rf feeds/packages/net/xray-core
-rm -rf feeds/packages/net/xray-plugin
+# rm -rf feeds/packages/net/xray-core
+# rm -rf feeds/packages/net/xray-plugin
 # rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,v2ray*,sing*,smartdns}
 # rm -rf feeds/packages/utils/v2dat
 rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
@@ -74,7 +74,7 @@ rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftabl
 # find ./ | grep Makefile | grep ddns-go | xargs rm -f
 
 # 3rd packages
-git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
+# git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 # git clone --depth 1 --single-branch https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
