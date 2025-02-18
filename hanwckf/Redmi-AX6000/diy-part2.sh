@@ -55,23 +55,24 @@
 #     fi
 # done
 
+# clean dupe package makefile
 rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
 rm -rf feeds/packages/lang/golang
-
-# drop mosdns and v2ray-geodata packages that come with the source
 rm -rf feeds/packages/net/mosdns
 rm -rf feeds/packages/net/v2ray-geodata
 find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 find ./ | grep Makefile | grep mosdns | xargs rm -f
+find ./ | grep Makefile | grep ddns-go | xargs rm -f
 
-# golang
+# 3rd packages
 git clone --depth 1 --single-branch https://github.com/kenzok8/golang -b main feeds/packages/lang/golang
 # git clone --depth 1 --single-branch https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
-
-# mosdns
-# cp -r -f ./feeds/smpackage/mosdns ./feeds/packages/net/mosdns
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
+git clone https://github.com/sirpdboy/luci-app-ddns-go.git package/ddns-go
+git clone https://github.com/gdy666/luci-app-lucky.git package/lucky
+# git clone https://github.com/sbwml/luci-app-alist package/alist
+# git clone https://github.com/vernesong/OpenClash.git package/luci-app-openclash
 
 # v2ray-geodata
 # GEOIP_VER=$(echo -n `curl -sL https://api.github.com/repos/Loyalsoldier/v2ray-rules-dat/releases/latest | jq -r .tag_name`)
