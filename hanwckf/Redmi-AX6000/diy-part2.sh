@@ -63,6 +63,9 @@ rm -rf feeds/luci/applications/luci-app-alist
 rm -rf feeds/luci/applications/luci-app-unblockneteasemusic
 rm -rf feeds/luci/applications/luci-app-ddns-go
 # rm -rf feeds/packages/lang/golang
+rm -rf feeds/packages/net/alist
+rm -rf feeds/packages/net/cdnspeedtest
+rm -rf feeds/packages/net/chinadns-ng
 rm -rf feeds/packages/net/mosdns
 # rm -rf feeds/packages/net/v2ray-core
 # rm -rf feeds/packages/net/v2ray-plugin
@@ -80,6 +83,7 @@ rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftabl
 # git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 # git clone --depth 1 --single-branch https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
 # git clone https://github.com/vernesong/OpenClash.git package/luci-app-openclash
+git clone https://github.com/pexcn/openwrt-chinadns-ng.git package/chinadns-ng
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 git clone https://github.com/sirpdboy/luci-app-ddns-go.git package/ddns-go
