@@ -83,7 +83,7 @@ rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftabl
 # git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
 # git clone https://github.com/vernesong/OpenClash.git package/luci-app-openclash
-git clone https://github.com/pexcn/openwrt-chinadns-ng.git feeds/packages/chinadns-ng
+git clone https://github.com/pexcn/openwrt-chinadns-ng.git feeds/packages/net/chinadns-ng
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 feeds/packages/net/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 git clone https://github.com/sirpdboy/luci-app-ddns-go.git package/ddns-go
