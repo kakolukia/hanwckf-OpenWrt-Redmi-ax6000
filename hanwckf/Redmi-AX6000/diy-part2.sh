@@ -58,10 +58,12 @@
 # ./scripts/feeds update -a
 
 # clean dupe package makefile
+rm -rf feeds/luci/applications/luci-app-alist
 # rm -rf feeds/luci/applications/luci-app-mosdns
 rm -rf feeds/luci/applications/luci-app-unblockneteasemusic
+rm -rf feeds/luci/applications/luci-app-ddns-go
 # rm -rf feeds/packages/lang/golang
-# rm -rf feeds/packages/net/mosdns
+rm -rf feeds/packages/net/mosdns
 # rm -rf feeds/packages/net/v2ray-core
 # rm -rf feeds/packages/net/v2ray-plugin
 rm -rf feeds/packages/net/v2ray-geodata
