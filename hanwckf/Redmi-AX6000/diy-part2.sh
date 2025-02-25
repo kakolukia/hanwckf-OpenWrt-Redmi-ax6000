@@ -67,8 +67,8 @@ rm -rf feeds/packages/net/alist
 rm -rf feeds/packages/net/cdnspeedtest
 rm -rf feeds/packages/net/chinadns-ng
 rm -rf feeds/packages/net/mosdns
-# rm -rf feeds/packages/net/v2ray-core
-# rm -rf feeds/packages/net/v2ray-plugin
+rm -rf feeds/packages/net/v2ray-core
+rm -rf feeds/packages/net/v2ray-plugin
 rm -rf feeds/packages/net/v2ray-geodata
 # rm -rf feeds/packages/net/xray-core
 # rm -rf feeds/packages/net/xray-plugin
