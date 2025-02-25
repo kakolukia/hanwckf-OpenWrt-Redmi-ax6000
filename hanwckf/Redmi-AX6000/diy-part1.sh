@@ -79,8 +79,6 @@ echo 'src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-pa
 #     fi
 # done
 
-# ./scripts/feeds update -a
-
 # clean dupe package makefile
 rm -rf feeds/luci/applications/luci-app-alist
 rm -rf feeds/luci/applications/luci-app-mosdns
