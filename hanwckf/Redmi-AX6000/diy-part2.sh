@@ -91,8 +91,6 @@ git clone https://github.com/immortalwrt-collections/openwrt-cdnspeedtest.git -b
 git clone https://github.com/hubbylei/luci-app-cloudflarespeedtest -b main package/luci-app-cloudflarespeedtest
 # git clone https://github.com/sirpdboy/netspeedtest.git package/netspeedtest
 
-./scripts/feeds install -a
-
 # v2ray-geodata
 # GEOIP_VER=$(echo -n `curl -sL https://api.github.com/repos/Loyalsoldier/v2ray-rules-dat/releases/latest | jq -r .tag_name`)
 # GEOIP_HASH=$(echo -n `curl -sL https://github.com/Loyalsoldier/v2ray-rules-dat/releases/download/$GEOIP_VER/geoip.dat.sha256sum | awk '{print $1}'`)
