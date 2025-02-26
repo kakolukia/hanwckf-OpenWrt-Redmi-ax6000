@@ -81,9 +81,6 @@ function git_sparse_clone() {
 # Alist
 git clone --depth=1 https://github.com/sbwml/luci-app-alist package/luci-app-alist
 
-# Chinadns-ng
-git clone --depth=1 https://github.com/pexcn/openwrt-chinadns-ng.git package/chinadns-ng
-
 # DDNS-GO
 git clone --depth=1 https://github.com/sirpdboy/luci-app-ddns-go.git package/ddns-go
 
@@ -107,7 +104,7 @@ git clone https://github.com/gdy666/luci-app-lucky.git package/lucky && cd packa
 
 # MosDNS
 git clone --depth=1 https://github.com/sbwml/luci-app-mosdns -b v5 package/luci-app-mosdns
-git clone --depth=1 https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
+# git clone --depth=1 https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 
 # Netdata
 # git clone --depth=1 https://github.com/Jason6111/luci-app-netdata package/luci-app-netdata
