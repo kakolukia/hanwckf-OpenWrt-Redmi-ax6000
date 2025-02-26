@@ -21,6 +21,7 @@ feeds/luci/applications/luci-app-wechatpush
 feeds/packages/net/alist
 feeds/packages/net/mosdns
 feeds/packages/net/smartdns
+feeds/packages/net/cdnspeedtest
 feeds/packages/lang/golang
 "
 
@@ -119,7 +120,7 @@ git clone --depth=1 https://github.com/UnblockNeteaseMusic/luci-app-unblocknetea
 # git clone --depth=1 -b master https://github.com/pymumu/luci-app-smartdns package/luci-app-smartdns
 
 # Speedtest
-# git clone --depth=1 https://github.com/immortalwrt-collections/openwrt-cdnspeedtest.git -b master package/openwrt-cdnspeedtest
+git clone --depth=1 https://github.com/immortalwrt-collections/openwrt-cdnspeedtest.git -b master package/openwrt-cdnspeedtest
 # git clone --depth=1 https://github.com/hubbylei/openwrt-cdnspeedtest -b master package/openwrt-cdnspeedtest
 git clone --depth=1 https://github.com/hubbylei/luci-app-cloudflarespeedtest -b main package/luci-app-cloudflarespeedtest
 # git clone --depth=1 https://github.com/sirpdboy/netspeedtest.git package/netspeedtest
@@ -185,7 +186,7 @@ git clone --depth=1 https://github.com/hubbylei/luci-app-cloudflarespeedtest -b 
 
 
 ### 个性化设置 ###
-# 修改 IP
+# Lan IP
 sed -i 's/192.168.1.1/192.168.6.1/g' package/base-files/files/bin/config_generate
 
 # 更改 Argon 主题背景
@@ -224,5 +225,5 @@ sed -i 's/192.168.1.1/192.168.6.1/g' package/base-files/files/bin/config_generat
 # sed -i 's/services/vpn/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/view/v2ray_server/*.htm
 
 ### 更新 feeds ###
-./scripts/feeds update -a
-./scripts/feeds install -a
+# ./scripts/feeds update -a
+# ./scripts/feeds install -a
