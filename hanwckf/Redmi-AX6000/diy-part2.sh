@@ -5,78 +5,172 @@
 # This is free software, licensed under the MIT License.
 # See /LICENSE for more information.
 #
-# Custom for REDMI AX6000
+# https://github.com/P3TERX/Actions-OpenWrt
+# File name: diy-part2.sh
+# Description: OpenWrt DIY script part 2 (After Update feeds)
+#
 
-# del_data="
-# feeds/luci/applications/luci-app-passwall
-# feeds/luci/applications/luci-app-wechatpush
-# feeds/luci/applications/luci-app-smartdns
-# feeds/luci/applications/luci-app-serverchan
-# feeds/luci/applications/luci-app-mosdns
-# feeds/packages/net/brook
-# feeds/packages/net/dns2socks
-# feeds/packages/net/microsocks
-# feeds/packages/net/pdnsd-alt
-# feeds/packages/net/v2ray-geodata
-# feeds/packages/net/naiveproxy
-# feeds/packages/net/shadowsocks-rust
-# feeds/packages/net/shadowsocksr-libev
-# feeds/packages/net/simple-obfs
-# feeds/packages/net/sing-box
-# feeds/packages/net/tcping
-# feeds/packages/net/trojan
-# feeds/packages/net/trojan-go
-# feeds/packages/net/trojan-plus
-# feeds/packages/net/v2ray-core
-# feeds/packages/net/v2ray-plugin
-# feeds/packages/net/xray-plugin
-# feeds/packages/net/chinadns-ng
-# feeds/packages/net/dns2tcp
-# feeds/packages/net/tcping
-# feeds/packages/net/hysteria
-# feeds/packages/net/tuic-client
-# feeds/packages/net/smartdns
-# feeds/packages/net/ipt2socks
-# feeds/packages/net/xray-core
-# feeds/packages/net/cdnspeedtest
-# feeds/packages/lang/rust
-# feeds/packages/lang/golang
-# feeds/packages/devel/gn
-# target/linux/mediatek/patches-5.4/0504-macsec-revert-async-support.patch
-# target/linux/mediatek/patches-5.4/0005-dts-mt7622-add-gsw.patch
-# target/linux/mediatek/patches-5.4/0993-arm64-dts-mediatek-Split-PCIe-node-for-MT2712-MT7622.patch
-# target/linux/mediatek/patches-5.4/1024-pcie-add-multi-MSI-support.patch
-# "
-# 
-# for data in ${del_data};
-# do
-#     if [[ -d ${data} || -f ${data} ]];then
-#         rm -rf ${data}
-#         echo "Deleted ${data}"
-#     fi
-# done
+### 清理重复插件 ###
+del_data="
+feeds/luci/applications/luci-app-alist
+feeds/luci/applications/luci-app-ddns-go
+feeds/luci/applications/luci-app-mosdns
+feeds/luci/applications/luci-app-passwall
+feeds/luci/applications/luci-app-smartdns
+feeds/luci/applications/luci-app-unblockneteasemusic
+feeds/luci/applications/luci-app-wechatpush
+feeds/packages/net/alist
+feeds/packages/net/cdnspeedtest
+feeds/packages/net/chinadns-ng
+feeds/packages/net/mosdns
+feeds/packages/net/smartdns
+feeds/packages/net/v2ray-geodata
+feeds/packages/lang/golang
+"
 
-# clean dupe packages
-rm -rf feeds/luci/applications/luci-app-alist
-rm -rf feeds/luci/applications/luci-app-mosdns
-rm -rf feeds/luci/applications/luci-app-unblockneteasemusic
-rm -rf feeds/luci/applications/luci-app-ddns-go
-rm -rf feeds/packages/lang/golang
-rm -rf feeds/packages/net/alist
-rm -rf feeds/packages/net/cdnspeedtest
-rm -rf feeds/packages/net/chinadns-ng
-rm -rf feeds/packages/net/mosdns
+for data in ${del_data};
+do
+    if [[ -d ${data} || -f ${data} ]];then
+        rm -rf ${data}
+        echo "Deleted ${data}"
+    fi
+done
+
+# rm -rf feeds/luci/applications/luci-app-alist
+# rm -rf feeds/luci/applications/luci-app-mosdns
+# rm -rf feeds/luci/applications/luci-app-unblockneteasemusic
+# rm -rf feeds/luci/applications/luci-app-ddns-go
+# rm -rf feeds/packages/lang/golang
+# rm -rf feeds/packages/net/alist
+# rm -rf feeds/packages/net/cdnspeedtest
+# rm -rf feeds/packages/net/chinadns-ng
+# rm -rf feeds/packages/net/mosdns
 # rm -rf feeds/packages/net/v2ray-core
 # rm -rf feeds/packages/net/v2ray-plugin
-rm -rf feeds/packages/net/v2ray-geodata
+# rm -rf feeds/packages/net/v2ray-geodata
 # rm -rf feeds/packages/net/xray-core
 # rm -rf feeds/packages/net/xray-plugin
 # rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,v2ray*,sing*,smartdns}
 # rm -rf feeds/packages/utils/v2dat
-rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
+# rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
 # find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 # find ./ | grep Makefile | grep mosdns | xargs rm -f
 # find ./ | grep Makefile | grep ddns-go | xargs rm -f
+
+# Git 稀疏克隆，只克隆指定目录到本地
+function git_sparse_clone() {
+  branch="$1" repourl="$2" && shift 2
+  git clone --depth=1 -b $branch --single-branch --filter=blob:none --sparse $repourl
+  repodir=$(echo $repourl | awk -F '/' '{print $(NF)}')
+  cd $repodir && git sparse-checkout set $@
+  mv -f $@ ../package
+  cd .. && rm -rf $repodir
+}
+
+### 自定义插件 ###
+# 科学上网插件
+# git clone --depth=1 -b main https://github.com/fw876/helloworld package/luci-app-ssr-plus
+# git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
+# git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall package/luci-app-passwall
+# git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-app-passwall2
+# git_sparse_clone master https://github.com/vernesong/OpenClash luci-app-openclash
+
+# Adguardhome
+# git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
+
+# Alist
+git clone --depth=1 https://github.com/sbwml/luci-app-alist package/luci-app-alist
+
+# Chinadns-ng
+git clone --depth=1 https://github.com/pexcn/openwrt-chinadns-ng.git package/chinadns-ng
+
+# DDNS-GO
+git clone --depth=1 https://github.com/sirpdboy/luci-app-ddns-go.git package/ddns-go
+
+# DDNS.to
+# git_sparse_clone main https://github.com/linkease/nas-packages-luci luci/luci-app-ddnsto
+# git_sparse_clone master https://github.com/linkease/nas-packages network/services/ddnsto
+
+# Golang
+# git clone --depth=1 https://github.com/kenzok8/golang feeds/packages/lang/golang
+git clone --depth=1 https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
+
+# iStore
+# git_sparse_clone main https://github.com/linkease/istore luci
+# git_sparse_clone main https://github.com/linkease/istore-ui app-store-ui
+
+# Lucky
+git clone https://github.com/gdy666/luci-app-lucky.git package/lucky && cd package/lucky/ && git checkout 3f856de2d521e1b9b9c6e4f51b24c19a0938f2da && cd -
+
+# Koolproxy
+# git clone --depth=1 https://github.com/ilxp/luci-app-ikoolproxy package/luci-app-ikoolproxy
+
+# MosDNS
+git clone --depth=1 https://github.com/sbwml/luci-app-mosdns -b v5 package/luci-app-mosdns
+git clone --depth=1 https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
+
+# Netdata
+# git clone --depth=1 https://github.com/Jason6111/luci-app-netdata package/luci-app-netdata
+
+# OpenAppFilter
+# git clone --depth=1 https://github.com/destan19/OpenAppFilter package/OpenAppFilter
+
+# Poweroff
+# git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff package/luci-app-poweroff
+
+# Unblockneteasemusic
+git clone --depth=1 https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git -b js package/luci-app-unblockneteasemusic
+
+# SmartDNS
+git clone --depth=1 https://github.com/pymumu/openwrt-smartdns package/smartdns
+git clone --depth=1 -b master https://github.com/pymumu/luci-app-smartdns package/luci-app-smartdns
+
+# Speedtest
+git clone --depth=1 https://github.com/immortalwrt-collections/openwrt-cdnspeedtest.git -b master package/cdnspeedtest
+# git clone --depth=1 https://github.com/hubbylei/openwrt-cdnspeedtest -b master package/openwrt-cdnspeedtest
+git clone --depth=1 https://github.com/hubbylei/luci-app-cloudflarespeedtest -b main package/luci-app-cloudflarespeedtest
+# git clone --depth=1 https://github.com/sirpdboy/netspeedtest.git package/netspeedtest
+
+# Themes
+# git clone --depth=1 -b 18.06 https://github.com/kiddin9/luci-theme-edge package/luci-theme-edge
+# git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
+# git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
+# git clone --depth=1 https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom package/luci-theme-infinityfreedom
+# git_sparse_clone main https://github.com/haiibo/packages luci-theme-atmaterial luci-theme-opentomcat luci-theme-netgear
+
+# Wechatpush
+# git clone --depth=1 -b master https://github.com/tty228/luci-app-wechatpush package/luci-app-serverchan
+
+
+### 程序设置 ###
+# 修复 hostapd 报错
+# cp -f $GITHUB_WORKSPACE/scripts/011-fix-mbo-modules-build.patch package/network/services/hostapd/patches/011-fix-mbo-modules-build.patch
+
+# 修复 armv8 设备 xfsprogs 报错
+# sed -i 's/TARGET_CFLAGS.*/TARGET_CFLAGS += -DHAVE_MAP_SYNC -D_LARGEFILE64_SOURCE/g' feeds/packages/utils/xfsprogs/Makefile
+
+# 修改 Makefile
+# find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/..\/..\/luci.mk/$(TOPDIR)\/feeds\/luci\/luci.mk/g' {}
+# find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/..\/..\/lang\/golang\/golang-package.mk/$(TOPDIR)\/feeds\/packages\/lang\/golang\/golang-package.mk/g' {}
+# find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/PKG_SOURCE_URL:=@GHREPO/PKG_SOURCE_URL:=https:\/\/github.com/g' {}
+# find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/PKG_SOURCE_URL:=@GHCODELOAD/PKG_SOURCE_URL:=https:\/\/codeload.github.com/g' {}
+
+# smartdns
+# SMARTDNS_JSON=$(curl -sL -H "${headers}" https://api.github.com/repos/pymumu/smartdns/commits)
+# SMARTDNS_VER=$(echo ${SMARTDNS_JSON} | jq -r .[0].commit.committer.date | awk -F "T" '{print $1}')
+# SMARTDNS_SHA=$(echo ${SMARTDNS_JSON} | jq -r .[0].sha)
+
+# curl -sL -o /tmp/smartdns-${SMARTDNS_SHA}.tar.gz https://codeload.github.com/pymumu/smartdns/tar.gz/${SMARTDNS_SHA}
+# SMARTDNS_PKG_SHA=$(sha256sum /tmp/smartdns-${SMARTDNS_SHA}.tar.gz | awk '{print $1}')
+# rm -rf /tmp/smartdns-${SMARTDNS_SHA}.tar.gz
+
+# sed -i 's/PKG_VERSION:=.*/PKG_VERSION:='${SMARTDNS_SHA}'/g' package/custom/smartdns/Makefile
+# sed -i 's/PKG_SOURCE_PROTO:=git/PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz/g' package/custom/smartdns/Makefile
+# sed -i 's/PKG_SOURCE_URL:=.*/PKG_SOURCE_URL:=https:\/\/codeload.github.com\/pymumu\/smartdns\/tar.gz\/$(PKG_VERSION)?/g' package/custom/smartdns/Makefile
+# sed -i '/PKG_SOURCE_VERSION:=.*/d' package/custom/smartdns/Makefile
+# sed -i 's/PKG_MIRROR_HASH:=.*/PKG_HASH:='${SMARTDNS_PKG_SHA}'/g' package/custom/smartdns/Makefile
+# sed -i 's/PKG_VERSION:=.*/PKG_VERSION:='${SMARTDNS_VER}'/g' package/custom/luci-app-smartdns/Makefile
+# sed -i 's/..\/..\/luci.mk/$(TOPDIR)\/feeds\/luci\/luci.mk/g' package/custom/luci-app-smartdns/Makefile
 
 # v2ray-geodata
 # GEOIP_VER=$(echo -n `curl -sL https://api.github.com/repos/Loyalsoldier/v2ray-rules-dat/releases/latest | jq -r .tag_name`)
@@ -96,27 +190,46 @@ rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftabl
 # 
 # sed -i 's/URL:=https:\/\/www.v2fly.org/URL:=https:\/\/github.com\/Loyalsoldier\/v2ray-rules-dat/g' package/custom/passwall-packages/v2ray-geodata/Makefile
 
-# 个性化设置
+
+### 个性化设置 ###
+# 修改 IP
 sed -i 's/192.168.1.1/192.168.6.1/g' package/base-files/files/bin/config_generate
-# sed -i 's/ImmortalWrt/OpenWrt/g' package/base-files/files/bin/config_generate
-# sed -i 's/pool.ntp.org/3.openwrt.pool.ntp.org/g' package/base-files/files/bin/config_generate
-# sed -i 's/time1.apple.com/0.openwrt.pool.ntp.org/g' package/base-files/files/bin/config_generate
-# sed -i 's/time1.google.com/1.openwrt.pool.ntp.org/g' package/base-files/files/bin/config_generate
-# sed -i 's/time.cloudflare.com/2.openwrt.pool.ntp.org/g' package/base-files/files/bin/config_generate
-# sed -i 's/default-settings-chn/default-settings/g' include/target.mk
-# sed -i 's/ImmortalWrt/OpenWrt/g' include/version.mk
-# sed -i 's,https://immortalwrt.org/,https://openwrt.org/,g' include/version.mk
-# sed -i 's,https://github.com/immortalwrt/immortalwrt/issues,https://bugs.openwrt.org/,g' include/version.mk
-# sed -i 's,https://github.com/immortalwrt/immortalwrt/discussions,https://forum.openwrt.org/,g' include/version.mk
-# sed -i 's,https://downloads.immortalwrt.org/releases/21.02-SNAPSHOT,https://downloads.openwrt.org/releases/21.02-SNAPSHOT,g' include/version.mk
-# cp $GITHUB_WORKSPACE/hanwckf/Redmi-AX6000/data/mt7986a-xiaomi-redmi-router-ax6000.dtsi target/linux/mediatek/files-5.4/arch/arm64/boot/dts/mediatek/
-# cat > package/base-files/files/etc/banner << EOF
-#   _______                     ________        __
-#  |       |.-----.-----.-----.|  |  |  |.----.|  |_
-#  |   -   ||  _  |  -__|     ||  |  |  ||   _||   _|
-#  |_______||   __|_____|__|__||________||__|  |____|
-#           |__| W I R E L E S S   F R E E D O M
-#  -----------------------------------------------------
-#  %D %V, %C
-#  -----------------------------------------------------
-# EOF
+
+# 更改 Argon 主题背景
+# cp -f $GITHUB_WORKSPACE/images/bg1.jpg package/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
+
+# x86 型号只显示 CPU 型号
+# sed -i 's/${g}.*/${a}${b}${c}${d}${e}${f}${hydrid}/g' package/lean/autocore/files/x86/autocore
+
+# 修改本地时间格式
+# sed -i 's/os.date()/os.date("%a %Y-%m-%d %H:%M:%S")/g' package/lean/autocore/files/*/index.htm
+
+# 修改版本为编译日期
+# date_version=$(date +"%y.%m.%d")
+# orig_version=$(cat "package/lean/default-settings/files/zzz-default-settings" | grep DISTRIB_REVISION= | awk -F "'" '{print $2}')
+# sed -i "s/${orig_version}/R${date_version} by Haiibo/g" package/lean/default-settings/files/zzz-default-settings
+
+# 取消主题默认设置
+# find package/luci-theme-*/* -type f -name '*luci-theme-*' -print -exec sed -i '/set luci.main.mediaurlbase/d' {} \;
+
+# 调整 Docker 到 服务 菜单
+# sed -i 's/"admin"/"admin", "services"/g' feeds/luci/applications/luci-app-dockerman/luasrc/controller/*.lua
+# sed -i 's/"admin"/"admin", "services"/g; s/admin\//admin\/services\//g' feeds/luci/applications/luci-app-dockerman/luasrc/model/cbi/dockerman/*.lua
+# sed -i 's/admin\//admin\/services\//g' feeds/luci/applications/luci-app-dockerman/luasrc/view/dockerman/*.htm
+# sed -i 's|admin\\|admin\\/services\\|g' feeds/luci/applications/luci-app-dockerman/luasrc/view/dockerman/container.htm
+
+# 调整 ZeroTier 到 服务 菜单
+# sed -i 's/vpn/services/g; s/VPN/Services/g' feeds/luci/applications/luci-app-zerotier/luasrc/controller/zerotier.lua
+# sed -i 's/vpn/services/g' feeds/luci/applications/luci-app-zerotier/luasrc/view/zerotier/zerotier_status.htm
+
+# 取消对 samba4 的菜单调整
+# sed -i '/samba4/s/^/#/' package/lean/default-settings/files/zzz-default-settings
+
+# 调整 V2ray服务器 到 VPN 菜单
+# sed -i 's/services/vpn/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/controller/*.lua
+# sed -i 's/services/vpn/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/model/cbi/v2ray_server/*.lua
+# sed -i 's/services/vpn/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/view/v2ray_server/*.htm
+
+### 更新 feeds ###
+./scripts/feeds update -a
+./scripts/feeds install -a
