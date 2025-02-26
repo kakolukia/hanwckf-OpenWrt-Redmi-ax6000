@@ -20,7 +20,6 @@ feeds/luci/applications/luci-app-smartdns
 feeds/luci/applications/luci-app-unblockneteasemusic
 feeds/luci/applications/luci-app-wechatpush
 feeds/packages/net/alist
-feeds/packages/net/cdnspeedtest
 feeds/packages/net/chinadns-ng
 feeds/packages/net/mosdns
 feeds/packages/net/smartdns
@@ -123,7 +122,7 @@ git clone --depth=1 https://github.com/UnblockNeteaseMusic/luci-app-unblocknetea
 # git clone --depth=1 -b master https://github.com/pymumu/luci-app-smartdns package/luci-app-smartdns
 
 # Speedtest
-# git clone --depth=1 https://github.com/immortalwrt-collections/openwrt-cdnspeedtest.git -b master package/cdnspeedtest
+# git clone --depth=1 https://github.com/immortalwrt-collections/openwrt-cdnspeedtest.git -b master package/openwrt-cdnspeedtest
 # git clone --depth=1 https://github.com/hubbylei/openwrt-cdnspeedtest -b master package/openwrt-cdnspeedtest
 git clone --depth=1 https://github.com/hubbylei/luci-app-cloudflarespeedtest -b main package/luci-app-cloudflarespeedtest
 # git clone --depth=1 https://github.com/sirpdboy/netspeedtest.git package/netspeedtest
