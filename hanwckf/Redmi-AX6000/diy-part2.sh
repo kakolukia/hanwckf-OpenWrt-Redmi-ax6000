@@ -15,15 +15,12 @@ del_data="
 feeds/luci/applications/luci-app-alist
 feeds/luci/applications/luci-app-ddns-go
 feeds/luci/applications/luci-app-mosdns
-feeds/luci/applications/luci-app-passwall
 feeds/luci/applications/luci-app-smartdns
 feeds/luci/applications/luci-app-unblockneteasemusic
 feeds/luci/applications/luci-app-wechatpush
 feeds/packages/net/alist
-feeds/packages/net/chinadns-ng
 feeds/packages/net/mosdns
 feeds/packages/net/smartdns
-feeds/packages/net/v2ray-geodata
 feeds/packages/lang/golang
 "
 
