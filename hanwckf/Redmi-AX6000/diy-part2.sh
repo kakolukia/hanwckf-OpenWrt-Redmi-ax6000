@@ -56,13 +56,6 @@ done
 # find ./ | grep Makefile | grep ddns-go | xargs rm -f
 
 
-### 更新 feeds ###
-# cd openwrt
-# ./scripts/feeds update -i
-# ./scripts/feeds install -a
-# cd ..
-
-
 ### 自定义插件 ###
 # Git 稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
@@ -73,10 +66,6 @@ function git_sparse_clone() {
   mv -f $@ ../package
   cd .. && rm -rf $repodir
 }
-
-# Golang
-# git clone --depth=1 https://github.com/kenzok8/golang feeds/packages/lang/golang
-git clone --depth=1 https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
 
 # 科学上网插件
 # git clone --depth=1 -b main https://github.com/fw876/helloworld package/luci-app-ssr-plus
@@ -97,6 +86,10 @@ git clone --depth=1 https://github.com/sirpdboy/luci-app-ddns-go.git package/ddn
 # DDNS.to
 # git_sparse_clone main https://github.com/linkease/nas-packages-luci luci/luci-app-ddnsto
 # git_sparse_clone master https://github.com/linkease/nas-packages network/services/ddnsto
+
+# Golang
+# git clone --depth=1 https://github.com/kenzok8/golang feeds/packages/lang/golang
+git clone --depth=1 https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
 
 # iStore
 # git_sparse_clone main https://github.com/linkease/istore-ui app-store-ui
@@ -143,6 +136,13 @@ git clone --depth=1 https://github.com/hubbylei/luci-app-cloudflarespeedtest -b 
 
 # Wechatpush
 # git clone --depth=1 -b master https://github.com/tty228/luci-app-wechatpush package/luci-app-serverchan
+
+
+### 更新 feeds ###
+cd openwrt
+./scripts/feeds update -a
+./scripts/feeds install -a
+cd ..
 
 
 ### 程序设置 ###
