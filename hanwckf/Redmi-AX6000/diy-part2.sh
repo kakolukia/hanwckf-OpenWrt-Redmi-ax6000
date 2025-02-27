@@ -88,6 +88,10 @@ function git_sparse_clone() {
   cd .. && rm -rf $repodir
 }
 
+# Golang
+# git clone --depth=1 https://github.com/kenzok8/golang feeds/packages/lang/golang
+git clone --depth=1 https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
+
 # 科学上网插件
 # git clone --depth=1 -b main https://github.com/fw876/helloworld package/luci-app-ssr-plus
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
@@ -107,10 +111,6 @@ git clone --depth=1 https://github.com/sirpdboy/luci-app-ddns-go.git package/ddn
 # DDNS.to
 # git_sparse_clone main https://github.com/linkease/nas-packages-luci luci/luci-app-ddnsto
 # git_sparse_clone master https://github.com/linkease/nas-packages network/services/ddnsto
-
-# Golang
-# git clone --depth=1 https://github.com/kenzok8/golang feeds/packages/lang/golang
-git clone --depth=1 https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
 
 # iStore
 # git_sparse_clone main https://github.com/linkease/istore-ui app-store-ui
