@@ -116,8 +116,8 @@ git clone --depth=1 https://github.com/sbwml/luci-app-mosdns -b v5 package/luci-
 git clone --depth=1 https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git -b js package/luci-app-unblockneteasemusic
 
 # SmartDNS
-# git clone --depth=1 https://github.com/pymumu/openwrt-smartdns package/smartdns
-# git clone --depth=1 -b master https://github.com/pymumu/luci-app-smartdns package/luci-app-smartdns
+git clone --depth=1 https://github.com/pymumu/openwrt-smartdns package/smartdns
+git clone --depth=1 -b master https://github.com/pymumu/luci-app-smartdns package/luci-app-smartdns
 
 # Speedtest
 git clone --depth=1 https://github.com/immortalwrt-collections/openwrt-cdnspeedtest.git -b master package/openwrt-cdnspeedtest
