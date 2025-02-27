@@ -138,10 +138,10 @@ git clone --depth=1 https://github.com/hubbylei/luci-app-cloudflarespeedtest -b 
 
 
 ### 更新 feeds ###
-# cd openwrt
+# cd $GITHUB_WORKSPACE/openwrt
 # ./scripts/feeds update -a
 # ./scripts/feeds install -a
-# cd ..
+# cd $GITHUB_WORKSPACE
 
 
 ### 程序设置 ###
