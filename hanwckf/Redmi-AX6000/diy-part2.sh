@@ -58,6 +58,7 @@ done
 # cd openwrt
 # ./scripts/feeds update -i
 # ./scripts/feeds install -a
+# cd ..
 
 
 ### 自定义插件 ###
