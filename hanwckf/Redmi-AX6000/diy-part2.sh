@@ -53,6 +53,14 @@ done
 # find ./ | grep Makefile | grep mosdns | xargs rm -f
 # find ./ | grep Makefile | grep ddns-go | xargs rm -f
 
+
+### 更新 feeds ###
+# cd openwrt
+# ./scripts/feeds update -i
+# ./scripts/feeds install -a
+
+
+### 自定义插件 ###
 # Git 稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
   branch="$1" repourl="$2" && shift 2
@@ -63,7 +71,6 @@ function git_sparse_clone() {
   cd .. && rm -rf $repodir
 }
 
-### 自定义插件 ###
 # Golang
 # git clone --depth=1 https://github.com/kenzok8/golang feeds/packages/lang/golang
 git clone --depth=1 https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
@@ -134,9 +141,6 @@ git clone --depth=1 https://github.com/hubbylei/luci-app-cloudflarespeedtest -b 
 # Wechatpush
 # git clone --depth=1 -b master https://github.com/tty228/luci-app-wechatpush package/luci-app-serverchan
 
-### 更新 feeds ###
-# ./scripts/feeds update -a
-./scripts/feeds install -a
 
 ### 程序设置 ###
 # 修复 hostapd 报错
