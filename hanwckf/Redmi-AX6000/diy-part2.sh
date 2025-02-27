@@ -33,6 +33,8 @@ feeds/packages/net/microsocks
 feeds/packages/net/mosdns
 feeds/packages/net/naiveproxy
 feeds/packages/net/pdnsd-alt
+feeds/packages/net/shadowsocks-rust
+feeds/packages/net/shadowsocksr-libev
 feeds/packages/net/simple-obfs
 feeds/packages/net/sing-box
 feeds/packages/net/smartdns
@@ -87,6 +89,10 @@ function git_sparse_clone() {
   mv -f $@ ../package
   cd .. && rm -rf $repodir
 }
+
+# Lang/rust
+git_sparse_clone https://github.com/openwrt/packages lang/rust
+cp -rf /package/lang/rust feeds/packages/lang/
 
 # Golang
 # git clone --depth=1 https://github.com/kenzok8/golang feeds/packages/lang/golang
