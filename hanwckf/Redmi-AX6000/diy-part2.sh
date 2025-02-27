@@ -19,6 +19,7 @@ feeds/luci/applications/luci-app-smartdns
 feeds/luci/applications/luci-app-unblockneteasemusic
 feeds/luci/applications/luci-app-wechatpush
 feeds/packages/net/alist
+feeds/packages/net/ddns-go
 feeds/packages/net/mosdns
 feeds/packages/net/smartdns
 feeds/packages/net/cdnspeedtest
