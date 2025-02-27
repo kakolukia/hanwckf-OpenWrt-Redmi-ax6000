@@ -79,11 +79,10 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
         
-    - name: Update & install feeds
+    - name: Update & Install feeds 01
       run: |
         cd openwrt
         ./scripts/feeds update -a
-        ./scripts/feeds install -a
       
     - name: Load .config & DIY_P2_SH
       run: |
@@ -92,8 +91,12 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
-      # ./scripts/feeds update -a
-      # ./scripts/feeds install -a
+
+    - name: Update & Install feeds 02
+      run: |
+        cd openwrt
+        ./scripts/feeds update -i
+        ./scripts/feeds install -a
         
     - name: Download package
       id: package
