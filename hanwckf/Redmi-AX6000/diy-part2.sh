@@ -18,7 +18,6 @@ feeds/luci/applications/luci-app-mosdns
 feeds/luci/applications/luci-app-smartdns
 feeds/luci/applications/luci-app-unblockneteasemusic
 feeds/luci/applications/luci-app-wechatpush
-feeds/packages/lang/golang
 feeds/packages/net/alist
 feeds/packages/net/cdnspeedtest
 feeds/packages/net/ddns-go
@@ -89,7 +88,7 @@ git clone --depth=1 https://github.com/sirpdboy/luci-app-ddns-go.git package/ddn
 
 # Golang
 # git clone --depth=1 https://github.com/kenzok8/golang feeds/packages/lang/golang
-git clone --depth=1 https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
+# git clone --depth=1 https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
 
 # iStore
 # git_sparse_clone main https://github.com/linkease/istore-ui app-store-ui
@@ -139,10 +138,10 @@ git clone --depth=1 https://github.com/hubbylei/luci-app-cloudflarespeedtest -b 
 
 
 ### 更新 feeds ###
-cd openwrt
-./scripts/feeds update -a
-./scripts/feeds install -a
-cd ..
+# cd openwrt
+# ./scripts/feeds update -a
+# ./scripts/feeds install -a
+# cd ..
 
 
 ### 程序设置 ###
