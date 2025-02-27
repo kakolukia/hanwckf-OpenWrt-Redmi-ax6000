@@ -18,11 +18,13 @@ feeds/luci/applications/luci-app-mosdns
 feeds/luci/applications/luci-app-smartdns
 feeds/luci/applications/luci-app-unblockneteasemusic
 feeds/luci/applications/luci-app-wechatpush
+feeds/packages/lang/golang
 feeds/packages/net/alist
+feeds/packages/net/cdnspeedtest
 feeds/packages/net/ddns-go
 feeds/packages/net/mosdns
 feeds/packages/net/smartdns
-feeds/packages/lang/golang
+feeds/packages/net/v2ray-geodata
 "
 for data in ${del_data};
 do
@@ -127,8 +129,8 @@ git clone --depth=1 -b master https://github.com/pymumu/luci-app-smartdns packag
 git clone --depth=1 https://github.com/pymumu/openwrt-smartdns package/smartdns
 
 # Speedtest
-git clone --depth=1 https://github.com/immortalwrt-collections/openwrt-cdnspeedtest.git -b master package/openwrt-cdnspeedtest
-# git clone --depth=1 https://github.com/hubbylei/openwrt-cdnspeedtest -b master package/openwrt-cdnspeedtest
+# git clone --depth=1 https://github.com/immortalwrt-collections/openwrt-cdnspeedtest.git -b master package/openwrt-cdnspeedtest
+git clone --depth=1 https://github.com/hubbylei/openwrt-cdnspeedtest -b master package/openwrt-cdnspeedtest
 git clone --depth=1 https://github.com/hubbylei/luci-app-cloudflarespeedtest -b main package/luci-app-cloudflarespeedtest
 # git clone --depth=1 https://github.com/sirpdboy/netspeedtest.git package/netspeedtest
 
