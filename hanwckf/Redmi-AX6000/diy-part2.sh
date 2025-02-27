@@ -65,6 +65,10 @@ function git_sparse_clone() {
 }
 
 ### 自定义插件 ###
+# Golang
+# git clone --depth=1 https://github.com/kenzok8/golang feeds/packages/lang/golang
+git clone --depth=1 https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
+
 # 科学上网插件
 # git clone --depth=1 -b main https://github.com/fw876/helloworld package/luci-app-ssr-plus
 # git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
@@ -85,13 +89,9 @@ git clone --depth=1 https://github.com/sirpdboy/luci-app-ddns-go.git package/ddn
 # git_sparse_clone main https://github.com/linkease/nas-packages-luci luci/luci-app-ddnsto
 # git_sparse_clone master https://github.com/linkease/nas-packages network/services/ddnsto
 
-# Golang
-# git clone --depth=1 https://github.com/kenzok8/golang feeds/packages/lang/golang
-git clone --depth=1 https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
-
 # iStore
-# git_sparse_clone main https://github.com/linkease/istore luci
 # git_sparse_clone main https://github.com/linkease/istore-ui app-store-ui
+# git_sparse_clone main https://github.com/linkease/istore luci
 
 # Lucky
 git clone https://github.com/gdy666/luci-app-lucky.git package/lucky && cd package/lucky/ && git checkout 3f856de2d521e1b9b9c6e4f51b24c19a0938f2da && cd -
@@ -100,8 +100,8 @@ git clone https://github.com/gdy666/luci-app-lucky.git package/lucky && cd packa
 # git clone --depth=1 https://github.com/ilxp/luci-app-ikoolproxy package/luci-app-ikoolproxy
 
 # MosDNS
-git clone --depth=1 https://github.com/sbwml/luci-app-mosdns -b v5 package/luci-app-mosdns
 # git clone --depth=1 https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
+git clone --depth=1 https://github.com/sbwml/luci-app-mosdns -b v5 package/luci-app-mosdns
 
 # Netdata
 # git clone --depth=1 https://github.com/Jason6111/luci-app-netdata package/luci-app-netdata
@@ -116,8 +116,8 @@ git clone --depth=1 https://github.com/sbwml/luci-app-mosdns -b v5 package/luci-
 git clone --depth=1 https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git -b js package/luci-app-unblockneteasemusic
 
 # SmartDNS
-git clone --depth=1 https://github.com/pymumu/openwrt-smartdns package/smartdns
 git clone --depth=1 -b master https://github.com/pymumu/luci-app-smartdns package/luci-app-smartdns
+git clone --depth=1 https://github.com/pymumu/openwrt-smartdns package/smartdns
 
 # Speedtest
 git clone --depth=1 https://github.com/immortalwrt-collections/openwrt-cdnspeedtest.git -b master package/openwrt-cdnspeedtest
