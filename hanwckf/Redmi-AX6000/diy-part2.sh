@@ -21,6 +21,7 @@ feeds/luci/applications/luci-app-unblockneteasemusic
 feeds/luci/applications/luci-app-wechatpush
 feeds/packages/devel/gn
 feeds/packages/lang/golang
+feeds/packages/lang/rust
 feeds/packages/net/alist
 feeds/packages/net/cdnspeedtest
 feeds/packages/net/chinadns-ng
