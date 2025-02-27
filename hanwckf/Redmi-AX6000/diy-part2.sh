@@ -139,7 +139,7 @@ git clone --depth=1 https://github.com/hubbylei/luci-app-cloudflarespeedtest -b 
 
 
 ### 更新 feeds ###
-./scripts/feeds install -a -f
+# ./scripts/feeds install -a -f
 
 
 ### 程序设置 ###
