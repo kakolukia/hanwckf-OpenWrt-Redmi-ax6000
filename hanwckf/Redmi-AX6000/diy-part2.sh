@@ -22,10 +22,8 @@ feeds/packages/net/alist
 feeds/packages/net/ddns-go
 feeds/packages/net/mosdns
 feeds/packages/net/smartdns
-feeds/packages/net/cdnspeedtest
 feeds/packages/lang/golang
 "
-
 for data in ${del_data};
 do
     if [[ -d ${data} || -f ${data} ]];then
@@ -136,6 +134,9 @@ git clone --depth=1 https://github.com/hubbylei/luci-app-cloudflarespeedtest -b 
 # Wechatpush
 # git clone --depth=1 -b master https://github.com/tty228/luci-app-wechatpush package/luci-app-serverchan
 
+### 更新 feeds ###
+# ./scripts/feeds update -a
+./scripts/feeds install -a
 
 ### 程序设置 ###
 # 修复 hostapd 报错
@@ -224,7 +225,3 @@ sed -i 's/192.168.1.1/192.168.6.1/g' package/base-files/files/bin/config_generat
 # sed -i 's/services/vpn/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/controller/*.lua
 # sed -i 's/services/vpn/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/model/cbi/v2ray_server/*.lua
 # sed -i 's/services/vpn/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/view/v2ray_server/*.htm
-
-### 更新 feeds ###
-# ./scripts/feeds update -a
-# ./scripts/feeds install -a
