@@ -79,7 +79,7 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
         
-    - name: Update & install feeds - 1
+    - name: Update feeds
       run: |
         cd openwrt
         ./scripts/feeds update -a
@@ -92,7 +92,7 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
-    - name: Update & install feeds - 2
+    - name: Install feeds
       run: |
         cd openwrt
         ./scripts/feeds update -i
