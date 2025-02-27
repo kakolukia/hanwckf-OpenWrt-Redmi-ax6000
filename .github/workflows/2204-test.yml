@@ -83,6 +83,7 @@ jobs:
       run: |
         cd openwrt
         ./scripts/feeds update -a
+        ./scripts/feeds install -a
       
     - name: Load .config & DIY_P2_SH
       run: |
@@ -91,8 +92,8 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
-        ./scripts/feeds update -a
-        ./scripts/feeds install -a
+      # ./scripts/feeds update -a
+      # ./scripts/feeds install -a
         
     - name: Download package
       id: package
