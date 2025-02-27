@@ -77,8 +77,8 @@ function git_sparse_clone() {
 # git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
 
 # Alist
-git clone --depth=1 https://github.com/sbwml/luci-app-alist package/luci-app-alist
-# git clone https://github.com/sbwml/luci-app-alist package/alist
+# git clone --depth=1 https://github.com/sbwml/luci-app-alist package/luci-app-alist
+git clone https://github.com/sbwml/luci-app-alist package/alist
 
 # DDNS-GO
 git clone --depth=1 https://github.com/sirpdboy/luci-app-ddns-go.git package/ddns-go
@@ -140,7 +140,7 @@ git clone --depth=1 https://github.com/hubbylei/luci-app-cloudflarespeedtest -b 
 
 ### 更新 feeds ###
 # ./scripts/feeds update -i
-./scripts/feeds install -a
+# ./scripts/feeds install -a
 
 
 ### 程序设置 ###
