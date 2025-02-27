@@ -91,7 +91,7 @@ function git_sparse_clone() {
 }
 
 # Lang/rust
-git_sparse_clone master https://github.com/openwrt/packages lang/rust
+git_sparse_clone master https://github.com/openwrt/packages lang
 cp -rf package/lang/rust feeds/packages/lang/
 
 # Golang
