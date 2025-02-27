@@ -137,11 +137,6 @@ git clone --depth=1 https://github.com/hubbylei/luci-app-cloudflarespeedtest -b 
 # git clone --depth=1 -b master https://github.com/tty228/luci-app-wechatpush package/luci-app-serverchan
 
 
-### 更新 feeds ###
-./scripts/feeds update -i
-./scripts/feeds install -a
-
-
 ### 程序设置 ###
 # 修复 hostapd 报错
 # cp -f $GITHUB_WORKSPACE/scripts/011-fix-mbo-modules-build.patch package/network/services/hostapd/patches/011-fix-mbo-modules-build.patch
