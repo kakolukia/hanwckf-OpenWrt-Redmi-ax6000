@@ -52,7 +52,7 @@ done
 # rm -rf feeds/packages/net/xray-core
 # rm -rf feeds/packages/net/xray-plugin
 # rm -rf feeds/packages/utils/v2dat
-# rm -rf feeds/passwall_packages/shadowsocks-rust
+rm -rf feeds/passwall_packages/shadowsocks-rust
 # rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,v2ray*,sing*,smartdns}
 rm -rf feeds/kenzo/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd-alt,miniupnpd-iptables,wireless-regdb}
 # rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
@@ -87,7 +87,7 @@ git clone --depth=1 https://github.com/kenzok8/golang feeds/packages/lang/golang
 
 # 科学上网插件
 # git clone --depth=1 -b main https://github.com/fw876/helloworld package/luci-app-ssr-plus
-# git clone --depth=1  https://github.com/kenzok8/openwrt-packages package/kenzo
+git clone --depth=1  https://github.com/kenzok8/openwrt-packages package/kenzo
 # git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
 # git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall package/luci-app-passwall
 # git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-app-passwall2
