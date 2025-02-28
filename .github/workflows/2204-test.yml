@@ -83,7 +83,7 @@ jobs:
       run: |
         cd openwrt
         ./scripts/feeds update -a
-    #    ./scripts/feeds install -a
+        ./scripts/feeds install -a
       
     - name: Load .config & DIY_P2_SH
       run: |
@@ -96,7 +96,6 @@ jobs:
     - name: Update & install feeds - 2
       run: |
         cd openwrt
-        ./scripts/feeds update -i
         ./scripts/feeds install -a
         
     - name: Download package
