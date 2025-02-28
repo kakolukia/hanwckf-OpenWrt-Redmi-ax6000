@@ -96,6 +96,7 @@ jobs:
     - name: Update & install feeds - 2
       run: |
         cd openwrt
+        ./scripts/feeds update -i
         ./scripts/feeds install -a
         
     - name: Download package
