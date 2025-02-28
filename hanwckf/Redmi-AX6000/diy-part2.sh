@@ -19,36 +19,15 @@ feeds/luci/applications/luci-app-passwall
 feeds/luci/applications/luci-app-smartdns
 feeds/luci/applications/luci-app-unblockneteasemusic
 feeds/luci/applications/luci-app-wechatpush
-feeds/packages/devel/gn
 feeds/packages/lang/golang
-feeds/packages/lang/rust
+feeds/packages/net/adguardhome
 feeds/packages/net/alist
 feeds/packages/net/cdnspeedtest
 feeds/packages/net/chinadns-ng
 feeds/packages/net/ddns-go
-feeds/packages/net/dns2socks
-feeds/packages/net/dns2tcp
-feeds/packages/net/hysteria
-feeds/packages/net/ipt2socks
-feeds/packages/net/microsocks
 feeds/packages/net/mosdns
-feeds/packages/net/naiveproxy
-feeds/packages/net/pdnsd-alt
-feeds/packages/net/shadowsocks-rust
-feeds/packages/net/shadowsocksr-libev
-feeds/packages/net/simple-obfs
-feeds/packages/net/sing-box
 feeds/packages/net/smartdns
-feeds/packages/net/tcping
-feeds/packages/net/trojan
-feeds/packages/net/trojan-go
-feeds/packages/net/trojan-plus
-feeds/packages/net/tuic-client
-feeds/packages/net/v2ray-core
 feeds/packages/net/v2ray-geodata
-feeds/packages/net/v2ray-plugin
-feeds/packages/net/xray-core
-feeds/packages/net/xray-plugin
 "
 for data in ${del_data};
 do
@@ -96,9 +75,9 @@ function git_sparse_clone() {
 git clone --depth=1 https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
 
 # Lang/rust
-git_sparse_clone master https://github.com/openwrt/packages lang
-cp -rf package/lang/rust feeds/packages/lang/
-rm -rf package/lang
+# git_sparse_clone master https://github.com/openwrt/packages lang
+# cp -rf package/lang/rust feeds/packages/lang/
+# rm -rf package/lang
 
 # 科学上网插件
 # git clone --depth=1 -b main https://github.com/fw876/helloworld package/luci-app-ssr-plus
@@ -169,7 +148,7 @@ git clone --depth=1 https://github.com/hubbylei/luci-app-cloudflarespeedtest -b 
 
 
 ### 更新 feeds ###
-# ./scripts/feeds install -a -f
+# ./scripts/feeds install golang -f
 
 
 ### 程序设置 ###
