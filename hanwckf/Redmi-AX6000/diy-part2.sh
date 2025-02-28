@@ -13,7 +13,6 @@
 ### 清理重复插件 ###
 del_data="
 feeds/luci/applications/luci-app-alist
-feeds/luci/applications/luci-app-ddns-go
 feeds/luci/applications/luci-app-mosdns
 feeds/luci/applications/luci-app-passwall
 feeds/luci/applications/luci-app-smartdns
@@ -24,7 +23,6 @@ feeds/packages/net/adguardhome
 feeds/packages/net/alist
 feeds/packages/net/cdnspeedtest
 feeds/packages/net/chinadns-ng
-feeds/packages/net/ddns-go
 feeds/packages/net/mosdns
 feeds/packages/net/smartdns
 feeds/packages/net/v2ray-geodata
@@ -106,7 +104,7 @@ git clone --depth=1 https://github.com/sbwml/luci-app-alist package/luci-app-ali
 # git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall-packages chinadns-ng
 
 # DDNS-GO
-git clone --depth=1 https://github.com/sirpdboy/luci-app-ddns-go.git package/ddns-go
+# git clone --depth=1 https://github.com/sirpdboy/luci-app-ddns-go.git package/ddns-go
 
 # DDNS.to
 # git_sparse_clone main https://github.com/linkease/nas-packages-luci luci/luci-app-ddnsto
