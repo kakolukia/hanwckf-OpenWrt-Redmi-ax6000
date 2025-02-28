@@ -86,8 +86,8 @@ git clone --depth=1 https://github.com/kenzok8/golang feeds/packages/lang/golang
 
 # 科学上网插件
 # git clone --depth=1 -b main https://github.com/fw876/helloworld package/luci-app-ssr-plus
-# git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
-# git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall package/luci-app-passwall
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall package/luci-app-passwall
 # git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-app-passwall2
 # git_sparse_clone master https://github.com/vernesong/OpenClash luci-app-openclash
 
@@ -98,7 +98,7 @@ git clone --depth=1 https://github.com/kenzok8/golang feeds/packages/lang/golang
 git clone --depth=1 https://github.com/sbwml/luci-app-alist package/luci-app-alist
 
 # Chinadns-ng
-git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall-packages chinadns-ng
+# git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall-packages chinadns-ng
 
 # DDNS-GO
 git clone --depth=1 https://github.com/sirpdboy/luci-app-ddns-go.git package/ddns-go
