@@ -12,20 +12,42 @@
 
 ### 清理重复插件 ###
 del_data="
+feeds/packages/lang/golang
 feeds/luci/applications/luci-app-alist
 feeds/luci/applications/luci-app-mosdns
 feeds/luci/applications/luci-app-passwall
 feeds/luci/applications/luci-app-smartdns
 feeds/luci/applications/luci-app-unblockneteasemusic
 feeds/luci/applications/luci-app-wechatpush
+feeds/packages/devel/gn
 feeds/packages/lang/golang
 feeds/packages/net/adguardhome
 feeds/packages/net/alist
 feeds/packages/net/cdnspeedtest
 feeds/packages/net/chinadns-ng
+feeds/packages/net/dns2socks
+feeds/packages/net/dns2tcp
+feeds/packages/net/hysteria
+feeds/packages/net/ipt2socks
+feeds/packages/net/microsocks
 feeds/packages/net/mosdns
+feeds/packages/net/naiveproxy
+feeds/packages/net/pdnsd-alt
+feeds/packages/net/shadowsocks-rust
+feeds/packages/net/shadowsocksr-libev
+feeds/packages/net/simple-obfs
+feeds/packages/net/sing-box
 feeds/packages/net/smartdns
+feeds/packages/net/tcping
+feeds/packages/net/trojan
+feeds/packages/net/trojan-go
+feeds/packages/net/trojan-plus
+feeds/packages/net/tuic-client
+feeds/packages/net/v2ray-core
 feeds/packages/net/v2ray-geodata
+feeds/packages/net/v2ray-plugin
+feeds/packages/net/xray-core
+feeds/packages/net/xray-plugin
 "
 for data in ${del_data};
 do
