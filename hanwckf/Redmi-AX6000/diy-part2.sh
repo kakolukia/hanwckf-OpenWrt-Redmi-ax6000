@@ -49,6 +49,7 @@ feeds/packages/net/v2ray-geodata
 feeds/packages/net/v2ray-plugin
 feeds/packages/net/xray-core
 feeds/packages/net/xray-plugin
+feeds/packages/utils/v2dat
 "
 for data in ${del_data};
 do
@@ -72,7 +73,7 @@ done
 # rm -rf feeds/packages/net/v2ray-geodata
 # rm -rf feeds/packages/net/xray-core
 # rm -rf feeds/packages/net/xray-plugin
-# rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,v2ray*,sing*,smartdns}
+rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,v2ray*,sing*,smartdns}
 # rm -rf feeds/packages/utils/v2dat
 # rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
 # find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
@@ -92,8 +93,8 @@ function git_sparse_clone() {
 }
 
 # Golang
-# git clone --depth=1 https://github.com/kenzok8/golang feeds/packages/lang/golang
-git clone --depth=1 https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
+git clone --depth=1 https://github.com/kenzok8/golang feeds/packages/lang/golang
+# git clone --depth=1 https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
 # ./scripts/feeds install -a -p golang
 
 # Lang/rust
