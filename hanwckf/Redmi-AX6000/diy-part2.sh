@@ -97,6 +97,9 @@ git clone --depth=1 https://github.com/kenzok8/golang feeds/packages/lang/golang
 # Alist
 git clone --depth=1 https://github.com/sbwml/luci-app-alist package/luci-app-alist
 
+# Chinadns-ng
+git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall-packages chinadns-ng
+
 # DDNS-GO
 git clone --depth=1 https://github.com/sirpdboy/luci-app-ddns-go.git package/ddns-go
 
