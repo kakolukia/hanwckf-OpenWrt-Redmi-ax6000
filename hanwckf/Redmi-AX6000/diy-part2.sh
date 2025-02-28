@@ -21,7 +21,7 @@ feeds/luci/applications/luci-app-unblockneteasemusic
 feeds/luci/applications/luci-app-wechatpush
 feeds/packages/devel/gn
 feeds/packages/lang/golang
-feeds/packages/lang/rust
+feeds/packages/net/adguardhome
 feeds/packages/net/alist
 feeds/packages/net/cdnspeedtest
 feeds/packages/net/chinadns-ng
@@ -94,12 +94,15 @@ function git_sparse_clone() {
 # Golang
 # git clone --depth=1 https://github.com/kenzok8/golang feeds/packages/lang/golang
 git clone --depth=1 https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
-# ./scripts/feeds install golang
+# ./scripts/feeds install -a -p golang
 
 # Lang/rust
-git_sparse_clone master https://github.com/openwrt/packages lang
-cp -rf package/lang/rust feeds/packages/lang/
-rm -rf package/lang
+# git_sparse_clone master https://github.com/openwrt/packages lang
+# unalias cp
+# cp -rf package/lang/rust feeds/packages/lang/
+# alias cp='cp -i'
+# rm -rf package/lang
+# ./scripts/feeds install -a -p lang
 
 # 科学上网插件
 # git clone --depth=1 -b main https://github.com/fw876/helloworld package/luci-app-ssr-plus
