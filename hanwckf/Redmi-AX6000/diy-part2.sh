@@ -73,6 +73,7 @@ function git_sparse_clone() {
 # Golang
 # git clone --depth=1 https://github.com/kenzok8/golang feeds/packages/lang/golang
 git clone --depth=1 https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
+# ./scripts/feeds install golang
 
 # Lang/rust
 # git_sparse_clone master https://github.com/openwrt/packages lang
@@ -147,8 +148,8 @@ git clone --depth=1 https://github.com/hubbylei/luci-app-cloudflarespeedtest -b 
 # git clone --depth=1 -b master https://github.com/tty228/luci-app-wechatpush package/luci-app-serverchan
 
 
-### 更新 feeds ###
-# ./scripts/feeds install golang -f
+### 更新 feeds（已设置在工作流文件中）###
+# ./scripts/feeds install -a
 
 
 ### 程序设置 ###
