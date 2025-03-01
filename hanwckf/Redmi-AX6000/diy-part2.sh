@@ -14,6 +14,7 @@
 del_data="
 feeds/packages/lang/golang
 feeds/luci/applications/luci-app-alist
+feeds/luci/applications/luci-app-ddns-go
 feeds/luci/applications/luci-app-mosdns
 feeds/luci/applications/luci-app-passwall
 feeds/luci/applications/luci-app-smartdns
@@ -29,6 +30,8 @@ feeds/packages/net/cdnspeedtest
 feeds/packages/net/chinadns-ng
 feeds/packages/net/dns2socks
 feeds/packages/net/dns2tcp
+feeds/packages/net/ddns-go
+feeds/packages/net/haproxy
 feeds/packages/net/hysteria
 feeds/packages/net/ipt2socks
 feeds/packages/net/microsocks
@@ -60,7 +63,6 @@ done
 # rm -rf feeds/luci/applications/luci-app-alist
 # rm -rf feeds/luci/applications/luci-app-mosdns
 # rm -rf feeds/luci/applications/luci-app-unblockneteasemusic
-# rm -rf feeds/luci/applications/luci-app-ddns-go
 # rm -rf feeds/packages/lang/golang
 # rm -rf feeds/packages/net/alist
 # rm -rf feeds/packages/net/cdnspeedtest
@@ -78,7 +80,6 @@ done
 # rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
 # find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 # find ./ | grep Makefile | grep mosdns | xargs rm -f
-# find ./ | grep Makefile | grep ddns-go | xargs rm -f
 
 
 ### 自定义插件 ###
@@ -126,11 +127,14 @@ git clone --depth=1 https://github.com/sbwml/luci-app-alist package/luci-app-ali
 # git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall-packages chinadns-ng
 
 # DDNS-GO
-# git clone --depth=1 https://github.com/sirpdboy/luci-app-ddns-go.git package/ddns-go
+git clone --depth=1 https://github.com/sirpdboy/luci-app-ddns-go.git package/ddns-go
 
 # DDNS.to
 # git_sparse_clone main https://github.com/linkease/nas-packages-luci luci/luci-app-ddnsto
 # git_sparse_clone master https://github.com/linkease/nas-packages network/services/ddnsto
+
+# Filebrowser
+# git clone --depth=1 https://github.com/xiaozhuai/luci-app-filebrowser package/luci-app-filebrowser
 
 # iStore
 # git_sparse_clone main https://github.com/linkease/istore-ui app-store-ui
@@ -162,6 +166,7 @@ git clone --depth=1 https://github.com/UnblockNeteaseMusic/luci-app-unblocknetea
 # SmartDNS
 # git clone --depth=1 -b master https://github.com/pymumu/luci-app-smartdns package/luci-app-smartdns
 # git clone --depth=1 https://github.com/pymumu/openwrt-smartdns package/smartdns
+
 WORKINGDIR="`pwd`/feeds/packages/net/smartdns"
 mkdir $WORKINGDIR -p
 rm $WORKINGDIR/* -fr
