@@ -31,7 +31,6 @@ feeds/packages/net/chinadns-ng
 feeds/packages/net/dns2socks
 feeds/packages/net/dns2tcp
 feeds/packages/net/ddns-go
-feeds/packages/net/haproxy
 feeds/packages/net/hysteria
 feeds/packages/net/ipt2socks
 feeds/packages/net/microsocks
