@@ -126,7 +126,7 @@ git clone --depth=1 https://github.com/sbwml/luci-app-alist package/luci-app-ali
 # git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall-packages chinadns-ng
 
 # DDNS-GO
-git clone --depth=1 -b v6.8.0 https://github.com/sirpdboy/luci-app-ddns-go.git package/ddns-go
+# git clone --depth=1 https://github.com/sirpdboy/luci-app-ddns-go.git package/ddns-go
 
 # DDNS.to
 # git_sparse_clone main https://github.com/linkease/nas-packages-luci luci/luci-app-ddnsto
@@ -140,8 +140,8 @@ git clone --depth=1 -b v6.8.0 https://github.com/sirpdboy/luci-app-ddns-go.git p
 # git_sparse_clone main https://github.com/linkease/istore luci
 
 # Lucky
-# git clone --depth=1 https://github.com/gdy666/luci-app-lucky.git package/lucky
-git clone https://github.com/gdy666/luci-app-lucky.git package/lucky && cd package/lucky/ && git checkout 3f856de2d521e1b9b9c6e4f51b24c19a0938f2da && cd $GITHUB_WORKSPACE/openwrt
+git clone --depth=1 https://github.com/gdy666/luci-app-lucky.git package/lucky
+# git clone https://github.com/gdy666/luci-app-lucky.git package/lucky && cd package/lucky/ && git checkout 3f856de2d521e1b9b9c6e4f51b24c19a0938f2da && cd $GITHUB_WORKSPACE/openwrt
 
 # Koolproxy
 # git clone --depth=1 https://github.com/ilxp/luci-app-ikoolproxy package/luci-app-ikoolproxy
