@@ -126,7 +126,7 @@ git clone --depth=1 https://github.com/sbwml/luci-app-alist package/luci-app-ali
 # git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall-packages chinadns-ng
 
 # DDNS-GO
-git clone --depth=1 https://github.com/sirpdboy/luci-app-ddns-go.git package/ddns-go
+git clone --depth=1 -b v6.8.0 https://github.com/sirpdboy/luci-app-ddns-go.git package/ddns-go
 
 # DDNS.to
 # git_sparse_clone main https://github.com/linkease/nas-packages-luci luci/luci-app-ddnsto
