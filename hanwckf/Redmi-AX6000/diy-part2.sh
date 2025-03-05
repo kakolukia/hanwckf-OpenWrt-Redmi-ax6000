@@ -45,7 +45,6 @@ feeds/packages/net/trojan
 feeds/packages/net/trojan-go
 feeds/packages/net/trojan-plus
 feeds/packages/net/tuic-client
-feeds/packages/net/v2ray-core
 feeds/packages/net/v2ray-geodata
 feeds/packages/net/v2ray-plugin
 feeds/packages/net/xray-core
@@ -59,6 +58,7 @@ do
     fi
 done
 
+# feeds/packages/net/v2ray-core
 # rm -rf feeds/luci/applications/luci-app-alist
 # rm -rf feeds/luci/applications/luci-app-mosdns
 # rm -rf feeds/luci/applications/luci-app-unblockneteasemusic
