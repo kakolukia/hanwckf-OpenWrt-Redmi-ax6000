@@ -23,6 +23,7 @@
 # echo 'src-git openclash https://github.com/vernesong/OpenClash.git;master' >>feeds.conf.default
 # echo 'src-git cdnspeedtest https://github.com/immortalwrt-collections/openwrt-cdnspeedtest.git' >>feeds.conf.default
 # echo 'src-git istore https://github.com/linkease/istore;main' >>feeds.conf.default
+echo 'src-git ts3server https://github.com/senayuki/openwrt_ts3server.git;master' >>feeds.conf.default
 
 # ddnsto
 # echo 'src-git nas https://github.com/linkease/nas-packages.git;master' >> feeds.conf.default
