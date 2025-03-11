@@ -21,6 +21,7 @@ feeds/luci/applications/luci-app-passwall
 feeds/luci/applications/luci-app-smartdns
 feeds/luci/applications/luci-app-unblockneteasemusic
 feeds/luci/applications/luci-app-wechatpush
+feeds/luci/collections/luci-lib-docker
 feeds/modemfeed/luci/themes/luci-theme-routerich
 feeds/modemfeed/packages/net/accel-ppp
 feeds/packages/devel/gn
