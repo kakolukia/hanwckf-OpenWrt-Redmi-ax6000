@@ -12,7 +12,6 @@
 
 ### 清理重复插件 ###
 del_data="
-feeds/packages/lang/golang
 feeds/luci/applications/luci-app-alist
 feeds/luci/applications/luci-app-ddns-go
 feeds/luci/applications/luci-app-dockerman
@@ -52,6 +51,8 @@ feeds/packages/net/v2ray-geodata
 feeds/packages/net/v2ray-plugin
 feeds/packages/net/xray-core
 feeds/packages/net/xray-plugin
+feeds/packages/utils/docker
+feeds/packages/utils/dockerd
 "
 for data in ${del_data};
 do
