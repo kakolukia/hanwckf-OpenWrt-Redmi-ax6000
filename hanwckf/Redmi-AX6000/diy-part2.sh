@@ -15,6 +15,7 @@ del_data="
 feeds/packages/lang/golang
 feeds/luci/applications/luci-app-alist
 feeds/luci/applications/luci-app-ddns-go
+feeds/luci/applications/luci-app-dockerman
 feeds/luci/applications/luci-app-mosdns
 feeds/luci/applications/luci-app-passwall
 feeds/luci/applications/luci-app-smartdns
