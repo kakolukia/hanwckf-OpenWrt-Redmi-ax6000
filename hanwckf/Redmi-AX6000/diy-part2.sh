@@ -135,8 +135,8 @@ git clone --depth=1 https://github.com/sbwml/luci-app-alist package/luci-app-ali
 # git_sparse_clone master https://github.com/linkease/nas-packages network/services/ddnsto
 
 # Docker
-git clone --depth=1 https://github.com/lisaac/luci-lib-docker.git package/lib-docker
-git clone --depth=1 https://github.com/lisaac/luci-app-dockerman.git package/dockerman
+# git clone --depth=1 https://github.com/lisaac/luci-lib-docker.git package/lib-docker
+# git clone --depth=1 https://github.com/lisaac/luci-app-dockerman.git package/dockerman
 
 # Filebrowser
 # git clone --depth=1 https://github.com/xiaozhuai/luci-app-filebrowser package/luci-app-filebrowser
