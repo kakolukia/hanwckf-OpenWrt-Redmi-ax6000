@@ -51,8 +51,6 @@ feeds/packages/net/v2ray-geodata
 feeds/packages/net/v2ray-plugin
 feeds/packages/net/xray-core
 feeds/packages/net/xray-plugin
-feeds/packages/utils/docker
-feeds/packages/utils/dockerd
 "
 for data in ${del_data};
 do
