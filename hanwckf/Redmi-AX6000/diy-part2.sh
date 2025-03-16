@@ -17,6 +17,7 @@ feeds/luci/applications/luci-app-ddns-go
 feeds/luci/applications/luci-app-dockerman
 feeds/luci/applications/luci-app-mosdns
 feeds/luci/applications/luci-app-passwall
+feeds/luci/applications/luci-app-passwall2
 feeds/luci/applications/luci-app-smartdns
 feeds/luci/applications/luci-app-unblockneteasemusic
 feeds/luci/applications/luci-app-wechatpush
