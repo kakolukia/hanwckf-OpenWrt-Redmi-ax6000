@@ -123,7 +123,7 @@ git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-
 # git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
 
 # Alist
-git clone --depth=1 https://github.com/sbwml/luci-app-alist package/luci-app-alist
+# git clone --depth=1 https://github.com/sbwml/luci-app-alist package/luci-app-alist
 
 # Chinadns-ng
 # git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall-packages chinadns-ng
