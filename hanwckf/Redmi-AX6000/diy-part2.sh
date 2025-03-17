@@ -95,25 +95,12 @@ function git_sparse_clone() {
   cd .. && rm -rf $repodir
 }
 
-# Golang
-# git clone --depth=1 https://github.com/kenzok8/golang feeds/packages/lang/golang
-git clone --depth=1 https://github.com/sbwml/packages_lang_golang -b 24.x feeds/packages/lang/golang
-# ./scripts/feeds install -a -p golang
-
-# Lang/rust
-# git_sparse_clone master https://github.com/openwrt/packages lang
-# unalias cp
-# cp -rf package/lang/rust feeds/packages/lang/
-# alias cp='cp -i'
-# rm -rf package/lang
-# ./scripts/feeds install -a -p lang
-
 # 科学上网插件
 # git clone --depth=1 -b main https://github.com/fw876/helloworld package/luci-app-ssr-plus
 # git clone --depth=1  https://github.com/kenzok8/openwrt-packages package/kenzo
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
-# git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall package/luci-app-passwall
-git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-app-passwall2
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall package/luci-app-passwall
+# git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-app-passwall2
 # git_sparse_clone master https://github.com/vernesong/OpenClash luci-app-openclash
 
 # 科学上网单独插件
@@ -124,9 +111,6 @@ git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-
 
 # Alist
 # git clone --depth=1 https://github.com/sbwml/luci-app-alist package/luci-app-alist
-
-# Chinadns-ng
-# git_sparse_clone main https://github.com/xiaorouji/openwrt-passwall-packages chinadns-ng
 
 # DDNS-GO
 # git clone --depth=1 https://github.com/sirpdboy/luci-app-ddns-go.git package/ddns-go
@@ -142,9 +126,22 @@ git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-
 # Filebrowser
 # git clone --depth=1 https://github.com/xiaozhuai/luci-app-filebrowser package/luci-app-filebrowser
 
+# Golang
+# git clone --depth=1 https://github.com/kenzok8/golang feeds/packages/lang/golang
+git clone --depth=1 https://github.com/sbwml/packages_lang_golang -b 24.x feeds/packages/lang/golang
+# ./scripts/feeds install -a -p golang
+
 # iStore
 # git_sparse_clone main https://github.com/linkease/istore-ui app-store-ui
 # git_sparse_clone main https://github.com/linkease/istore luci
+
+# Lang/rust
+# git_sparse_clone master https://github.com/openwrt/packages lang
+# unalias cp
+# cp -rf package/lang/rust feeds/packages/lang/
+# alias cp='cp -i'
+# rm -rf package/lang
+# ./scripts/feeds install -a -p lang
 
 # Lucky
 # git clone --depth=1 https://github.com/gdy666/luci-app-lucky.git package/lucky
@@ -155,7 +152,7 @@ git clone https://github.com/gdy666/luci-app-lucky.git package/lucky && cd packa
 
 # MosDNS
 # git clone --depth=1 https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
-# git clone --depth=1 https://github.com/sbwml/luci-app-mosdns -b v5 package/luci-app-mosdns
+git clone --depth=1 https://github.com/sbwml/luci-app-mosdns -b v5 package/luci-app-mosdns
 
 # Netdata
 # git clone --depth=1 https://github.com/Jason6111/luci-app-netdata package/luci-app-netdata
