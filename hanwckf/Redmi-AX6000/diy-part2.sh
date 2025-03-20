@@ -38,7 +38,6 @@ feeds/packages/net/ipt2socks
 feeds/packages/net/microsocks
 feeds/packages/net/mosdns
 feeds/packages/net/naiveproxy
-feeds/packages/net/pdnsd-alt
 feeds/packages/net/simple-obfs
 feeds/packages/net/sing-box
 feeds/packages/net/smartdns
