@@ -31,7 +31,6 @@ feeds/packages/net/alist
 feeds/packages/net/cdnspeedtest
 feeds/packages/net/chinadns-ng
 feeds/packages/net/dns2socks
-feeds/packages/net/dns2tcp
 feeds/packages/net/ddns-go
 feeds/packages/net/hysteria
 feeds/packages/net/ipt2socks
@@ -42,11 +41,9 @@ feeds/packages/net/simple-obfs
 feeds/packages/net/sing-box
 feeds/packages/net/smartdns
 feeds/packages/net/tcping
-feeds/packages/net/trojan
 feeds/packages/net/trojan-go
 feeds/packages/net/trojan-plus
 feeds/packages/net/tuic-client
-feeds/packages/net/v2ray-core
 feeds/packages/net/v2ray-geodata
 feeds/packages/net/v2ray-plugin
 feeds/packages/net/xray-core
