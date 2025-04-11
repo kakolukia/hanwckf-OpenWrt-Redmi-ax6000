@@ -132,12 +132,12 @@ git clone --depth=1 https://github.com/sbwml/packages_lang_golang -b 24.x feeds/
 # git_sparse_clone main https://github.com/linkease/istore luci
 
 # Lang/rust
-# git_sparse_clone master https://github.com/openwrt/packages lang
-# unalias cp
-# cp -rf package/lang/rust feeds/packages/lang/
-# alias cp='cp -i'
-# rm -rf package/lang
-# ./scripts/feeds install -a -p lang
+git_sparse_clone master https://github.com/openwrt/packages lang
+unalias cp
+cp -rf package/lang/rust feeds/packages/lang/
+alias cp='cp -i'
+rm -rf package/lang
+./scripts/feeds install -a -p lang
 
 # Lucky
 # git clone --depth=1 https://github.com/gdy666/luci-app-lucky.git package/lucky
